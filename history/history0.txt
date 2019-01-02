@@ -1,0 +1,23 @@
+input_shape = (96, 96, 1)
+num_examples = 2
+num_folders = 2
+start_folder = 0
+batch_size = 1
+epochs = 1
+learning_rate = 0.001
+l2 = 0.0001
+validation_size = 0.2
+random_state = 2018
+name_history = history/history0.txt
+save_model_name = models/FaceModel_train_test0.h5
+
+all_examples = 8
+train_examples = 6
+test_examples = 2
+
+Epoch 1/1
+		 loss: 1.0687323808670044, acc: 0.5, val_loss: 8.40088863670826, val_acc: 0.5
+	Start time=0:5, End time= 0:5, Spend time= 0:0:29
+
+-----------------------------------------
+
