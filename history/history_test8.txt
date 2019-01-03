@@ -10,3 +10,35 @@ load_model_name = models/FaceModel_whaleType8.h5
 
 test_examples = 600
 
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 20
+start_folder = 200
+validation_size = 0.2
+random_state = 2018
+name_history = history/history_test8.txt
+load_model_name = models/FaceModel_whaleType8.h5
+
+test_examples = 600
+
+	Start time = 15:44
+	End time = 15:45
+	Spend time = 0:1:4
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 20
+start_folder = 200
+validation_size = 0.2
+random_state = 2018
+name_history = history/history_test8.txt
+load_model_name = models/FaceModel_whaleType8.h5
+
+test_examples = 600
+
+	Start time = 15:48
+	End time = 15:49
+	Spend time = 0:0:50
+
+	Test accuracy = 0.5799999992052715

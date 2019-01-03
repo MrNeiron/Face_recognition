@@ -66,3 +66,20 @@ test_examples = 600
 
 -----------------------------------------
 
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 20
+start_folder = 200
+validation_size = 0.2
+random_state = 2018
+name_history = history/history_test6.txt
+load_model_name = models/FaceModel_whaleType6.h5
+
+test_examples = 600
+
+	Start time = 15:53
+	End time = 15:54
+	Spend time = 0:0:37
+
+	Test accuracy = 0.6016666666666667

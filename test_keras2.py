@@ -14,6 +14,12 @@ START_FOLDER = 200 if TYPE != 0 else 0
 NAME_HISTORY = f"history/history_test{TYPE}.txt"
 LOAD_MODEL_NAME = f"models/FaceModel_whaleType{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_train_test{TYPE}.h5"
 
+BATCH_SIZE = 100 if TYPE != 0 else 1#1-200, 2-100, 3-400
+EPOCHS = 90 if TYPE != 0 else 1#120
+
+LEARNING_RATE = 0.001#
+L2 = 0.0001#0.01
+
 VALIDATION_SIZE = 0.2
 RANDOM_STATE = 2018
 
@@ -36,18 +42,18 @@ to_file_params(NAME_HISTORY, [f"test_examples = {Y_test.shape[0]}\n"], False)
 FaceModel = load_model(LOAD_MODEL_NAME)
 
 my_time = TimeControll()
+time_start = my_time.get_start_time()
+to_file_params(NAME_HISTORY, [f"\tStart time = {time_start[0]}:{time_start[1]}"], with_lines = False)
+
 score = FaceModel.evaluate(X_test, Y_test, verbose = 1)
 my_time.set_end_time()
 
 
-time_start = my_time.get_start_time()
 time_end = my_time.get_end_time()
 time_spend = my_time.get_spend_time()
 
-out = [f"\tStart time={time_start[0]}:{time_start[1]}, End time= {time_end[0]}:{time_end[1]}, Spend time= {time_spend[0]}:{time_spend[1]}:{time_spend[2]}"]
+to_file_params(NAME_HISTORY,[f"\tEnd time = {time_end[0]}:{time_end[1]}\n\tSpend time = {time_spend[0]}:{time_spend[1]}:{time_spend[2]}"], with_lines = False)
 
-out.append(f"\n\tTest accuracy = {score[-1]}")
+to_file_params(NAME_HISTORY,[f"\n\tTest accuracy = {score[-1]}"], with_lines =False)
 
 print(f"Test accuracy: {score[-1]}")
-
-to_file_params(NAME_HISTORY, out)

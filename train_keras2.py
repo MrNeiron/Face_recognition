@@ -10,14 +10,14 @@ import numpy as np
 from Prepare_data import Get_data, Shuffle_data
 from utils import to_file_params, TimeControll, AccuracyHistory
 
-TYPE = 0
+TYPE = 8.3
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
 NUM_EXAMPLES = 15 if TYPE != 0 else 2#15
 NUM_FOLDERS = 150 if TYPE != 0 else 2#70
 START_FOLDER = 500 if TYPE != 0 else 0#500
-BATCH_SIZE = 200 if TYPE != 0 else 1#1-200, 2-400, 3-100
+BATCH_SIZE = 400 if TYPE != 0 else 1#1-200, 2-100, 3-400
 EPOCHS = 90 if TYPE != 0 else 1#120
 
 LEARNING_RATE = 0.001#
