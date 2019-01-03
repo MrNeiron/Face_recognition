@@ -10,17 +10,17 @@ import numpy as np
 from Prepare_data import Get_data, Shuffle_data
 from utils import to_file_params, TimeControll, AccuracyHistory
 
-TYPE = 8
+TYPE = 0
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
 NUM_EXAMPLES = 15 if TYPE != 0 else 2#15
-NUM_FOLDERS = 70 if TYPE != 0 else 2#70
+NUM_FOLDERS = 150 if TYPE != 0 else 2#70
 START_FOLDER = 500 if TYPE != 0 else 0#500
-BATCH_SIZE = 200 if TYPE != 0 else 1#200
-EPOCHS = 84 if TYPE != 0 else 1#120
+BATCH_SIZE = 200 if TYPE != 0 else 1#1-200, 2-400, 3-100
+EPOCHS = 90 if TYPE != 0 else 1#120
 
-LEARNING_RATE = 0.001#1-0.005, 2-0.01, 3-0.001
+LEARNING_RATE = 0.001#
 L2 = 0.0001#0.01
 
 VALIDATION_SIZE = 0.2
@@ -137,11 +137,16 @@ FaceModel, _,_ = build_model(INPUT_SHAPE, lr = LEARNING_RATE, l2 = L2)
         
 history = AccuracyHistory()
 
-to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size = {BATCH_SIZE}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\n"], False)
+to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size = {BATCH_SIZE}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\n"], with_lines = False)
 
-to_file_params(NAME_HISTORY, [f"all_examples = {Y_input.shape[0]}\ntrain_examples = {Y_train.shape[0]}\ntest_examples = {Y_val.shape[0]}\n"], False)
+to_file_params(NAME_HISTORY, [f"all_examples = {Y_input.shape[0]}\ntrain_examples = {Y_train.shape[0]}\ntest_examples = {Y_val.shape[0]}\n"], with_lines = False)
 
 my_time = TimeControll()
+time_start = my_time.get_start_time()
+to_file_params(NAME_HISTORY, [f"\tStart time = {time_start[0]}:{time_start[1]}"], with_lines = False)
+
+
+
 FaceModel.fit(X_train,Y_train,
                    batch_size = BATCH_SIZE,
                    epochs = EPOCHS,
@@ -152,14 +157,13 @@ my_time.set_end_time()
 
 FaceModel.save(SAVE_MODEL_NAME)
 
-time_start = my_time.get_start_time()
 time_end = my_time.get_end_time()
 time_spend = my_time.get_spend_time()
 
+to_file_params(NAME_HISTORY,[f"\tEnd time = {time_end[0]}:{time_end[1]}\n\tSpend time = {time_spend[0]}:{time_spend[1]}:{time_spend[2]}"], with_lines = False)
 
+to_file_params(NAME_HISTORY,[f"\tAccuracy: {history.acc[-1]}, Val Accuracy: {history.val_acc[-1]}, Loss: {history.loss[-1]}, Val Loss: {history.val_loss[-1]}"], with_lines = False)
 
 out = [f"Epoch {i+1}/{len(history.acc)}\n\t\t loss: {loss}, acc: {acc}, val_loss: {val_loss}, val_acc: {val_acc}" for i,(loss,acc,val_loss,val_acc) in enumerate(zip(history.loss,history.acc,history.val_loss,history.val_acc))]
-
-out.append(f"\tStart time={time_start[0]}:{time_start[1]}, End time= {time_end[0]}:{time_end[1]}, Spend time= {time_spend[0]}:{time_spend[1]}:{time_spend[2]}")
 
 to_file_params(NAME_HISTORY, out)

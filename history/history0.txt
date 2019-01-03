@@ -15,9 +15,12 @@ all_examples = 8
 train_examples = 6
 test_examples = 2
 
+	Start time = 5:39
+	End time = 5:39
+	Spend time = 0:0:26
+	Accuracy: 0.16666666666666666, Val Accuracy: 0.5, Loss: 1.0678841471672058, Val Loss: 8.400282368063927
 Epoch 1/1
-		 loss: 1.0687323808670044, acc: 0.5, val_loss: 8.40088863670826, val_acc: 0.5
-	Start time=0:5, End time= 0:5, Spend time= 0:0:29
+		 loss: 1.0678841471672058, acc: 0.16666666666666666, val_loss: 8.400282368063927, val_acc: 0.5
 
 -----------------------------------------
 
