@@ -1,0 +1,20 @@
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 20
+start_folder = 100
+name_history = history/history_test10.2.txt
+load_model_name = models/FaceModel_whaleType10.2.h5
+dataset_p = ../Datasets/Faces_dataset/Faces
+dataset_n = ../Datasets/Faces_dataset/Faces
+
+test_examples = 600
+
+	Start time = 0:9
+	End time = 0:9
+	Spend time = 0:0:29
+
+	Test accuracy = 0.541666667064031
+
+-----------------------------------------
+

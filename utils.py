@@ -95,6 +95,10 @@ class AccuracyHistory(Callback):
         self.val_loss = []
         self.acc = []
         self.loss = []
+        self.metrics = {"acc": self.acc,
+                        "val_acc": self.val_acc,
+                        "loss": self.loss,
+                        "val_loss": self.val_loss}
 
     def on_epoch_end(self, batch, logs={}):
         self.val_acc.append(logs.get('val_acc'))

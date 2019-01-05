@@ -1,0 +1,2 @@
+model_checkpoint_path: "FaceModel.ckpt"
+all_model_checkpoint_paths: "FaceModel.ckpt"

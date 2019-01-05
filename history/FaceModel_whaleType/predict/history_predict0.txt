@@ -1,0 +1,27 @@
+
+input_shape = (96, 96, 1)
+num_examples = 2
+num_folders = 2
+start_folder = 0
+validation_size = 0.2
+random_state = 2018
+name_history = history/history_predict0.txt
+load_model_name = models/FaceModel_train_test0.h5
+
+predict_examples = 8
+
+	Start time=0:12, End time= 0:13, Spend time= 0:0:20
+
+	Predict accuracy = 50.0
+
+0)score: [0.] - [1.]: [False]
+1)score: [0.] - [1.]: [False]
+2)score: [0.] - [1.]: [False]
+3)score: [0.] - [1.]: [False]
+4)score: [0.] - [0.]: [ True]
+5)score: [0.] - [0.]: [ True]
+6)score: [0.] - [0.]: [ True]
+7)score: [0.] - [0.]: [ True]
+
+-----------------------------------------
+

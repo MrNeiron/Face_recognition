@@ -10,18 +10,19 @@ import numpy as np
 from Prepare_data import Get_data, Shuffle_data
 from utils import to_file_params, TimeControll, AccuracyHistory
 
-TYPE = 8.3
+TYPE = 11.1
+DESCRIPTION = "Turning num epochs"
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
-NUM_EXAMPLES = 15 if TYPE != 0 else 2#15
-NUM_FOLDERS = 150 if TYPE != 0 else 2#70
-START_FOLDER = 500 if TYPE != 0 else 0#500
-BATCH_SIZE = 400 if TYPE != 0 else 1#1-200, 2-100, 3-400
-EPOCHS = 90 if TYPE != 0 else 1#120
+NUM_EXAMPLES = 15 if TYPE != 0 else 2
+NUM_FOLDERS = 150 if TYPE != 0 else 2
+START_FOLDER = 500 if TYPE != 0 else 0
+BATCH_SIZE = 400 if TYPE != 0 else 1
+EPOCHS = 50 if TYPE != 0 else 1
 
-LEARNING_RATE = 0.001#
-L2 = 0.0001#0.01
+LEARNING_RATE = 0.001
+L2 = 0.0007
 
 VALIDATION_SIZE = 0.2
 RANDOM_STATE = 2018
@@ -29,8 +30,10 @@ RANDOM_STATE = 2018
 NAME_HISTORY = f"history/history{TYPE}.txt"
 SAVE_MODEL_NAME = f"models/FaceModel_whaleType{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_train_test{TYPE}.h5" 
 
-X1_input, X2_input, Y_input = Get_data(path_p = "../Datasets/Faces_dataset/Faces", 
-                                       path_n = "../Datasets/Faces_dataset/Faces",
+DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
+
+X1_input, X2_input, Y_input = Get_data(path_p = DATASET_P, 
+                                       path_n = DATASET_N,
                                       resolution = RESOLUTION,
                                       grayscale = GRAYSCALE,
                                       num_examples = NUM_EXAMPLES,
@@ -137,7 +140,7 @@ FaceModel, _,_ = build_model(INPUT_SHAPE, lr = LEARNING_RATE, l2 = L2)
         
 history = AccuracyHistory()
 
-to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size = {BATCH_SIZE}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\n"], with_lines = False)
+to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size = {BATCH_SIZE}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
 
 to_file_params(NAME_HISTORY, [f"all_examples = {Y_input.shape[0]}\ntrain_examples = {Y_train.shape[0]}\ntest_examples = {Y_val.shape[0]}\n"], with_lines = False)
 
