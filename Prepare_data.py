@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 
-def PullOutArray(arr):
+def PullOutArray(arr, print_logs = False):
     newArr = np.zeros((arr.shape[0]*arr.shape[1], arr.shape[2], arr.shape[3], arr.shape[4]))
 
     counter = 0
@@ -11,10 +11,10 @@ def PullOutArray(arr):
         for j in range(arr.shape[1]):
             newArr[counter] = arr[i][j]
             counter += 1
-    print(f"new_shape = {newArr.shape[0]}, {newArr.shape[1]}, {newArr.shape[2]}, {newArr.shape[3]}")
+    if print_logs: print(f"new_shape = {newArr.shape[0]}, {newArr.shape[1]}, {newArr.shape[2]}, {newArr.shape[3]}")
     return newArr
 
-def Get_data(path_p, path_n, resolution, grayscale, num_examples, num_folders, input_shape, start_folder = 0):
+def Get_data(path_p, path_n, resolution, grayscale, num_examples, num_folders, input_shape, start_folder = 0, start_examples = 0, print_logs = True):
     X1_input_p0 = np.zeros((num_folders, num_examples, input_shape[0], input_shape[1], input_shape[2]))
     X2_input_p0 = np.zeros((num_folders, num_examples, input_shape[0], input_shape[1], input_shape[2]))
 
@@ -22,17 +22,18 @@ def Get_data(path_p, path_n, resolution, grayscale, num_examples, num_folders, i
         X1_input_p0[i] = take(f"{path_p}/({j})",
                              image_size = resolution,
                              grayscale = grayscale,
-                             num_examples = num_examples)
+                             num_examples = num_examples,
+                             start = start_examples)
         X2_input_p0[i] = X1_input_p0[i][::-1]
     
-    print(X1_input_p0.shape)
-    print(X2_input_p0.shape)
+    #print(X1_input_p0.shape)
+    #print(X2_input_p0.shape)
 
     X1_input_p = PullOutArray(X1_input_p0)
     X2_input_p = PullOutArray(X2_input_p0)
 
     Y_input_p = np.ones((X1_input_p.shape[0],1))
-    print(Y_input_p.shape)
+    #print(Y_input_p.shape)
 
 
 
@@ -43,41 +44,44 @@ def Get_data(path_p, path_n, resolution, grayscale, num_examples, num_folders, i
         X1_input_n0[i] = take(f"{path_n}/({j})",
                        image_size = resolution,
                        grayscale = grayscale,
-                       num_examples = num_examples)
+                       num_examples = num_examples,
+                       start = start_examples)
         X2_input_n0[i] = take(f"{path_n}/({j+1})",
                    image_size = resolution,
                    grayscale = grayscale,
-                   num_examples = num_examples)
+                   num_examples = num_examples,
+                   start = start_examples)
 
-    print(X1_input_n0.shape)
-    print(X2_input_n0.shape)
+    #print(X1_input_n0.shape)
+    #print(X2_input_n0.shape)
 
     X1_input_n = PullOutArray(X1_input_n0)
     X2_input_n = PullOutArray(X2_input_n0)
 
     Y_input_n = np.zeros((X1_input_n.shape[0],1))
-    print("Y_input_n.shape: ", Y_input_n.shape)
+    #print("Y_input_n.shape: ", Y_input_n.shape)
 
     X1_input = np.vstack((X1_input_p, X1_input_n))
-    print("X1_input.shape: ", X1_input.shape)
+    if print_logs: print("X1_input.shape: ", X1_input.shape)
 
     X2_input = np.vstack((X2_input_p, X2_input_n))
-    print("X2_input.shape: ", X2_input.shape)
+    if print_logs: print("X2_input.shape: ", X2_input.shape)
 
     Y_input = np.vstack((Y_input_p, Y_input_n))
-    print("Y_input.shape: ", Y_input.shape)
+    if print_logs: print("Y_input.shape: ", Y_input.shape)
     
     return X1_input, X2_input, Y_input
 
-def Shuffle_data(X1_input, X2_input, Y_input, validation_size, random_state):
+def Shuffle_data(X1_input, X2_input, Y_input, validation_size, random_state, print_logs = True):
     X1_train, X1_val, Y_train, Y_val = train_test_split(X1_input, Y_input, test_size = validation_size, random_state = random_state)
     X2_train, X2_val, Y_train, Y_val = train_test_split(X2_input, Y_input, test_size = validation_size, random_state = random_state)
     
     X_train = [X1_train, X2_train]
     X_val = [X1_val, X2_val]
-    print("X_train.shape: ",X1_train.shape)
-    print("X_val.shape: ", X1_val.shape)
-    print("Y_train.shape: ", Y_train.shape)
-    print("Y_val.shape: ", Y_val.shape)
+    if print_logs:
+        print("X_train.shape: ",X1_train.shape)
+        print("X_val.shape: ", X1_val.shape)
+        print("Y_train.shape: ", Y_train.shape)
+        print("Y_val.shape: ", Y_val.shape)
     
     return X_train, X_val, Y_train, Y_val

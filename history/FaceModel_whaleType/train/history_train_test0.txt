@@ -1,0 +1,324 @@
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 15
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Testing generator
+
+all_examples = 600
+train_examples = 450
+test_examples = 150
+
+	Start time = 23:39
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 15
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 600
+train_examples = 450
+test_examples = 150
+
+	Start time = 14:33
+	End time = 14:37
+	Spend time = 0:3:38
+	Accuracy: 0.557142857994352, Val Accuracy: 0.5333333313465118, Loss: 3.2502309594835554, Val Loss: 3.2404351234436035
+Epoch 1/5
+		 loss: 3.486112151827131, acc: 0.4928571454116276, val_loss: 3.6452351808547974, val_acc: 0.5083333253860474
+Epoch 2/5
+		 loss: 3.398888042994908, acc: 0.4976190413747515, val_loss: 3.4262919425964355, val_acc: 0.550000011920929
+Epoch 3/5
+		 loss: 3.3371104172297885, acc: 0.5452380946704319, val_loss: 3.3266749382019043, val_acc: 0.4333333373069763
+Epoch 4/5
+		 loss: 3.2876973833356584, acc: 0.519047634942191, val_loss: 3.286377191543579, val_acc: 0.5750000178813934
+Epoch 5/5
+		 loss: 3.2502309594835554, acc: 0.557142857994352, val_loss: 3.2404351234436035, val_acc: 0.5333333313465118
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 14:38
+	End time = 14:41
+	Spend time = 0:2:33
+	Accuracy: 0.5791666656732559, Val Accuracy: 0.5, Loss: 3.2622777819633484, Val Loss: 3.3547303676605225
+Epoch 1/5
+		 loss: 3.489917516708374, acc: 0.4833333343267441, val_loss: 3.736466407775879, val_acc: 0.4750000089406967
+Epoch 2/5
+		 loss: 3.4109261631965637, acc: 0.4999999925494194, val_loss: 3.4476466178894043, val_acc: 0.5333333313465118
+Epoch 3/5
+		 loss: 3.36251962184906, acc: 0.5083333253860474, val_loss: 3.633519172668457, val_acc: 0.3916666656732559
+Epoch 4/5
+		 loss: 3.3100807070732117, acc: 0.5416666716337204, val_loss: 3.4342377185821533, val_acc: 0.4416666626930237
+Epoch 5/5
+		 loss: 3.2622777819633484, acc: 0.5791666656732559, val_loss: 3.3547303676605225, val_acc: 0.5
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 14:45
+	End time = 14:47
+	Spend time = 0:2:24
+	Accuracy: 0.5833333432674408, Val Accuracy: 0.5166666805744171, Loss: 3.2412306666374207, Val Loss: 3.2716434001922607
+Epoch 1/5
+		 loss: 3.4498866200447083, acc: 0.4958333224058151, val_loss: 3.4645581245422363, val_acc: 0.45000000298023224
+Epoch 2/5
+		 loss: 3.3985477089881897, acc: 0.529166653752327, val_loss: 3.43974232673645, val_acc: 0.5083333253860474
+Epoch 3/5
+		 loss: 3.3470741510391235, acc: 0.5166666656732559, val_loss: 3.3930004835128784, val_acc: 0.5583333373069763
+Epoch 4/5
+		 loss: 3.292272210121155, acc: 0.5333333238959312, val_loss: 3.3308637142181396, val_acc: 0.4749999940395355
+Epoch 5/5
+		 loss: 3.2412306666374207, acc: 0.5833333432674408, val_loss: 3.2716434001922607, val_acc: 0.5166666805744171
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 15:10
+	End time = 15:12
+	Spend time = 0:2:19
+	Accuracy: 0.6583333313465118, Val Accuracy: 0.4749999940395355, Loss: 3.205787479877472, Val Loss: 3.6842551231384277
+Epoch 1/5
+		 loss: 3.440085768699646, acc: 0.5166666731238365, val_loss: 3.4049659967422485, val_acc: 0.625
+Epoch 2/5
+		 loss: 3.3862088918685913, acc: 0.5541666597127914, val_loss: 3.543946862220764, val_acc: 0.4749999940395355
+Epoch 3/5
+		 loss: 3.3361530900001526, acc: 0.5125000029802322, val_loss: 3.6957619190216064, val_acc: 0.5083333253860474
+Epoch 4/5
+		 loss: 3.2695226669311523, acc: 0.6708333343267441, val_loss: 3.6042098999023438, val_acc: 0.5083333402872086
+Epoch 5/5
+		 loss: 3.205787479877472, acc: 0.6583333313465118, val_loss: 3.6842551231384277, val_acc: 0.4749999940395355
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 17:1
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 20:40
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 8
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 5
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 5
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 390
+train_examples = 240
+test_examples = 150
+
+	Start time = 16:35
+	End time = 16:38
+	Spend time = 0:3:0
+	Accuracy: 0.5499999970197678, Val Accuracy: 0.5916666686534882, Loss: 3.330222427845001, Val Loss: 3.562300682067871
+Epoch 1/5
+		 loss: 3.58328115940094, acc: 0.5208333432674408, val_loss: 3.980651617050171, val_acc: 0.5166666656732559
+Epoch 2/5
+		 loss: 3.634968638420105, acc: 0.49166665226221085, val_loss: 4.192988038063049, val_acc: 0.4749999940395355
+Epoch 3/5
+		 loss: 3.480967104434967, acc: 0.5, val_loss: 4.92280912399292, val_acc: 0.46666666865348816
+Epoch 4/5
+		 loss: 3.3872339725494385, acc: 0.5375000089406967, val_loss: 3.695295572280884, val_acc: 0.5249999910593033
+Epoch 5/5
+		 loss: 3.330222427845001, acc: 0.5499999970197678, val_loss: 3.562300682067871, val_acc: 0.5916666686534882
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 5
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 1
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 3
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Testing generator
+
+all_examples = 180
+train_examples = 150
+test_examples = 30
+
+	Start time = 17:35
+	End time = 17:55
+	Spend time = 0:20:33
+	Accuracy: 1.0, Val Accuracy: 0.6000000238418579, Loss: 2.32046027580897, Val Loss: 3.2548811435699463
+Epoch 1/3
+		 loss: 3.053514023621877, acc: 0.7394444445768992, val_loss: 3.9015209674835205, val_acc: 0.5
+Epoch 2/3
+		 loss: 2.4923857410748798, acc: 0.9816666642824808, val_loss: 5.957726955413818, val_acc: 0.5666666626930237
+Epoch 3/3
+		 loss: 2.32046027580897, acc: 1.0, val_loss: 3.2548811435699463, val_acc: 0.6000000238418579
+
+-----------------------------------------
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 5
+start_folder = 0
+batch_size_folder = 2
+num_folders_val = 1
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 3
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history_train_test0.txt
+save_model_name = models/FaceModel_whaleType/Model_test_0.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Testing generator
+
+all_examples = 180
+train_examples = 150
+test_examples = 30
+
+	Start time = 17:35
+	End time = 17:59
+	Spend time = 0:23:55
+	Accuracy: 0.5250000059604645, Val Accuracy: 0.5666666626930237, Loss: 3.4127094745635986, Val Loss: 3.3705732822418213
+Epoch 1/3
+		 loss: 3.4468895196914673, acc: 0.5999999940395355, val_loss: 3.523559331893921, val_acc: 0.5
+Epoch 2/3
+		 loss: 3.423726797103882, acc: 0.5083333402872086, val_loss: 3.3989455699920654, val_acc: 0.5333333611488342
+Epoch 3/3
+		 loss: 3.4127094745635986, acc: 0.5250000059604645, val_loss: 3.3705732822418213, val_acc: 0.5666666626930237
+
+-----------------------------------------
+

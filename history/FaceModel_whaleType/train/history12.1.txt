@@ -1,0 +1,22 @@
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 300
+start_folder = 0
+batch_size_folder = 8
+num_folders_val = 20
+start_folder_val = 900
+batch_size_folder_val = 2
+epochs = 50
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history12.1.txt
+save_model_name = models/FaceModel_whaleType/Model_12.1.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with generator
+
+all_examples = 9600
+train_examples = 9000
+test_examples = 600
+
+	Start time = 23:54

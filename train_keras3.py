@@ -1,45 +1,61 @@
 from keras.models import Model
-from keras.layers import Activation, Add, BatchNormalization, Concatenate, Conv2D, Dense, Flatten, GlobalMaxPooling2D, Lambda, MaxPooling2D, Reshape
+from keras.layers import Activation, Add, BatchNormalization, Concatenate, Conv2D, Dense, Flatten, GlobalMaxPooling2D, Lambda, MaxPooling2D, Reshape, Dropout
 from keras import regularizers
 from keras.engine.topology import Input
 from keras.optimizers import Adam
 from keras import backend as K
 #import numpy as np
 
-from Prepare_data import Get_data, Shuffle_data
-from utils import to_file_params, TimeControll
+from Prepare_data import Get_data
+from utils import to_file_params, TimeControll, data_generator
 
 from keras.callbacks import ModelCheckpoint
-
 import matplotlib.pyplot as plt
-
 from json import dump as json_dump
-
 from os.path import exists
 from os import makedirs
 
-TYPE = 0
-DESCRIPTION = "Turning num epochs"
+
+#MAIN
+TYPE = 13.3
+
+#OTHERS
+DESCRIPTION = "Trainning with dropout regularizers"
+PRINT_LOGS = False
+SHOW_FIGURES = True
+
+#IMAGES
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
-NUM_EXAMPLES = 15 if TYPE != 0 else 2
-NUM_FOLDERS = 150 if TYPE != 0 else 2
-START_FOLDER = 500 if TYPE != 0 else 0
-BATCH_SIZE = 400 if TYPE != 0 else 1
-EPOCHS = 50 if TYPE != 0 else 20
+NUM_EXAMPLES = 15 if TYPE != 0 else 15
+START_EXAMPLES = 0 if TYPE != 0 else 0
 
+#FOLDERS
+NUM_FOLDERS = 1600 if TYPE != 0 else 8
+START_FOLDER = 0 if TYPE != 0 else 0
+BATCH_SIZE_FOLDER = 8 if TYPE != 0 else 2
+
+#FOLDERS VALIDATION
+NUM_FOLDERS_VAL = 60 if TYPE != 0 else 5
+START_FOLDER_VAL = 5000 if TYPE != 0 else 900
+BATCH_SIZE_FOLDER_VAL = 2 if TYPE != 0 else 2
+
+
+#TRAIN ITTERATION
+#BATCH_SIZE = 80 if TYPE != 0 else 50
+EPOCHS = 60 if TYPE != 0 else 5
+
+#TRAIN
 LEARNING_RATE = 0.001
 L2 = 0.0007
 
-VALIDATION_SIZE = 0.2
-RANDOM_STATE = 2018
-
+#DIRECTIONS
 NAME_HISTORY = f"history/FaceModel_whaleType/train/history{TYPE}.txt" if TYPE != 0 else f"history/FaceModel_whaleType/train/history_train_test{TYPE}.txt"
-
 NAME_JSON_HISTORY = f"history/FaceModel_whaleType/JSON/history{TYPE}.json" if TYPE != 0 else f"history/FaceModel_whaleType/JSON/history_test{TYPE}.json"
 
 NAME_FIGURE = f"figures/FaceModel_whaleType/train/{TYPE}/"
+
 
 SAVE_MODEL_DIR = "models/FaceModel_whaleType"
 SAVE_EACH_MODEL_DIR = f"{SAVE_MODEL_DIR}/{TYPE}"
@@ -48,17 +64,34 @@ SAVE_MODEL_NAME = f"{SAVE_MODEL_DIR}/Model_{TYPE}.h5" if TYPE != 0 else f"{SAVE_
 SAVE_EACH_MODEL_NAME = (f"{SAVE_EACH_MODEL_DIR}/Model_" + "{epoch:02d}-{val_loss:.2f}.h5") if TYPE != 0 else (f"{SAVE_EACH_MODEL_DIR}/Model_test_" + "{epoch:02d}-{val_loss:.2f}.h5")
 
 DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
-    
-X1_input, X2_input, Y_input = Get_data(path_p = DATASET_P, 
-                                       path_n = DATASET_N,
-                                      resolution = RESOLUTION,
-                                      grayscale = GRAYSCALE,
-                                      num_examples = NUM_EXAMPLES,
-                                      num_folders = NUM_FOLDERS,
-                                      input_shape = INPUT_SHAPE,
-                                      start_folder = START_FOLDER)
 
-X_train, X_val, Y_train, Y_val = Shuffle_data(X1_input, X2_input, Y_input, VALIDATION_SIZE, RANDOM_STATE)
+TRAIN_EXAMPLES = NUM_EXAMPLES*NUM_FOLDERS*2
+TEST_EXAMPLES = NUM_EXAMPLES*NUM_FOLDERS_VAL*2
+ALL_EXAMPLES = TRAIN_EXAMPLES+TEST_EXAMPLES
+    
+trainGen = data_generator(DATASET_P,
+                          DATASET_N,
+                          resolution = RESOLUTION,
+                          grayscale = GRAYSCALE,
+                          num_examples = NUM_EXAMPLES,
+                          start_examples = START_EXAMPLES,
+                          num_folders = NUM_FOLDERS,
+                          start_folder = START_FOLDER,
+                          batch_size_folder = BATCH_SIZE_FOLDER,
+                          input_shape = INPUT_SHAPE,
+                          print_logs = PRINT_LOGS)
+
+valGen = data_generator(DATASET_P,
+                        DATASET_N,
+                        resolution = RESOLUTION,
+                        grayscale = GRAYSCALE,
+                        num_examples = NUM_EXAMPLES,
+                        start_examples = START_EXAMPLES,
+                        num_folders = NUM_FOLDERS_VAL,
+                        start_folder = START_FOLDER_VAL,
+                        batch_size_folder = BATCH_SIZE_FOLDER_VAL,
+                        input_shape = INPUT_SHAPE,
+                        print_logs = PRINT_LOGS)
 
 def subblock(x, filter, **kwargs):
     x = BatchNormalization()(x)
@@ -98,11 +131,13 @@ def build_model(img_shape, lr, l2, activation='sigmoid'):
     x = BatchNormalization()(x)
     x = Conv2D(256, (1,1), activation='relu', **kwargs)(x) # 24x24x256
     for _ in range(2): x = subblock(x, 64, **kwargs)
-
+    x = Dropout(0.25)(x)
+    
     x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 12x12x256
     x = BatchNormalization()(x)
     x = Conv2D(384, (1,1), activation='relu', **kwargs)(x) # 12x12x384
     for _ in range(2): x = subblock(x, 96, **kwargs)
+    x = Dropout(0.2)(x)
 
     x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 6x6x384
     x = BatchNormalization()(x)
@@ -153,11 +188,10 @@ def build_model(img_shape, lr, l2, activation='sigmoid'):
 FaceModel, _,_ = build_model(INPUT_SHAPE, lr = LEARNING_RATE, l2 = L2)
 
 
-history = AccuracyHistory()
 
-to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size = {BATCH_SIZE}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
+to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size_folder = {BATCH_SIZE_FOLDER}\nnum_folders_val = {NUM_FOLDERS_VAL}\nstart_folder_val = {START_FOLDER_VAL}\nbatch_size_folder_val = {BATCH_SIZE_FOLDER_VAL}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
 
-to_file_params(NAME_HISTORY, [f"all_examples = {Y_input.shape[0]}\ntrain_examples = {Y_train.shape[0]}\ntest_examples = {Y_val.shape[0]}\n"], with_lines = False)
+to_file_params(NAME_HISTORY, [f"all_examples = {ALL_EXAMPLES}\ntrain_examples = {TRAIN_EXAMPLES}\ntest_examples = {TEST_EXAMPLES}\n"], with_lines = False)
 
 if not exists(SAVE_EACH_MODEL_DIR):
     makedirs(SAVE_EACH_MODEL_DIR)
@@ -172,12 +206,13 @@ my_time = TimeControll()
 time_start = my_time.get_start_time()
 to_file_params(NAME_HISTORY, [f"\tStart time = {time_start[0]}:{time_start[1]}"], with_lines = False)
 
-hist = FaceModel.fit(X_train,Y_train,
-                   batch_size = BATCH_SIZE,
-                   epochs = EPOCHS,
-                   verbose = 1,
-                   validation_data = (X_val, Y_val),
-                   callbacks = callback_list)
+hist = FaceModel.fit_generator(trainGen, 
+                               epochs = EPOCHS, 
+                               steps_per_epoch = NUM_FOLDERS//BATCH_SIZE_FOLDER,
+                               validation_data = valGen,
+                               validation_steps = NUM_FOLDERS_VAL//BATCH_SIZE_FOLDER_VAL,
+                               callbacks = callback_list,
+                               verbose = 1)
 
 my_time.set_end_time()
 
@@ -197,24 +232,7 @@ to_file_params(NAME_HISTORY, out)
 
 json_dump(hist.history, open(NAME_JSON_HISTORY, 'a'))
 
-def monitor_process(history, metrics):
-    metrics_list = {m:history[m] for m in metrics}
-    epochs = range(len(metrics_list[metrics[0]]))
-    
-    if not exists(NAME_FIGURE):
-        makedirs(NAME_FIGURE)
-    
-    for metric,values in metrics_list.items():
-        plt.plot(epochs, values)
-        plt.title(f"Type: {TYPE} - {metric}")
+if SHOW_FIGURES:
+    from utils import monitor_process
 
-
-        if TYPE != 0:
-            plt.savefig(NAME_FIGURE + f'{metric}-{values[-1]:.2f}.jpg', quality = 100, dpi = 150)
-        else:
-            plt.savefig(NAME_FIGURE + f'test_{metric}-{values[-1]:.2f}.jpg', quality = 100, dpi = 150)
-
-        plt.show()
-        
-monitor_process(hist.history, ["acc","val_acc","loss","val_loss"])
-        
+    monitor_process(hist.history, ["acc","val_acc","loss","val_loss"], NAME_FIGURE, TYPE)

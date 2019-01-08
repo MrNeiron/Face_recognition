@@ -6,9 +6,11 @@ from utils import to_file_params, TimeControll, get_all_params
 
 
 
-TYPE = 90
+TYPE = 13.2
+E = 18
+VALUE = 0.78
 
-params = get_all_params(f"history/history{TYPE}.txt", False, False, 
+params = get_all_params(f"history/FaceModel_whaleType/train/history{TYPE}.txt", False, False, 
                         "batch_size", 
                         "epochs", 
                         "learning_rate", 
@@ -18,11 +20,12 @@ RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
 NUM_EXAMPLES = 15 if TYPE != 0 else 2
-NUM_FOLDERS = 20 if TYPE != 0 else 2
-START_FOLDER = 100 if TYPE != 0 else 0
+NUM_FOLDERS = 100 if TYPE != 0 else 2
+START_FOLDER = 5000 if TYPE != 0 else 0
 
-NAME_HISTORY = f"history/history_test{TYPE}.txt"
-LOAD_MODEL_NAME = f"models/FaceModel_whaleType{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_train_test{TYPE}.h5"
+NAME_HISTORY = f"history/FaceModel_whaleType/test/history_test{TYPE}.txt"
+LOAD_MODEL_NAME = f"models/FaceModel_whaleType/Model_{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_whaleType/Model_test{TYPE}.h5"
+#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}/Model_{E}-{VALUE}.h5"
 DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
 
 BATCH_SIZE = params["batch_size"]

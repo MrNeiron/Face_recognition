@@ -1,9 +1,43 @@
 from datetime import datetime
 from keras.callbacks import Callback
 from pandas import DataFrame
+from Prepare_data import Get_data
+from os.path import exists
+from os import makedirs
+import matplotlib.pyplot as plt
 
 
+def data_generator(dir_p, dir_n, resolution, grayscale, num_examples, num_folders, input_shape, batch_size_folder, start_examples, start_folder, print_logs):
+    while True:
+        for current_start_folder in range(start_folder,start_folder+num_folders,batch_size_folder):
+            X1_input, X2_input, Y1_input = Get_data(dir_p, 
+                                                    dir_n,
+                                                    resolution = resolution,
+                                                    grayscale = grayscale,
+                                                    num_examples = num_examples,
+                                                    num_folders = batch_size_folder,
+                                                    start_folder = current_start_folder,
+                                                    start_examples = start_examples,
+                                                    input_shape = input_shape,
+                                                    print_logs = print_logs)
 
+            yield [X1_input,X2_input],Y1_input
+            
+def monitor_process(history, metrics, figure_name, type_model):
+    metrics_list = {m:history[m] for m in metrics}
+    epochs = range(len(metrics_list[metrics[0]]))
+    if not exists(figure_name):
+        makedirs(figure_name)
+    for metric,values in metrics_list.items():
+        plt.plot(epochs, values)
+        plt.title(f"Type: {type_model} - {metric}")
+        if type_model != 0:
+            plt.savefig(figure_name + f'{metric}-{values[-1]:.2f}.jpg', quality = 100, dpi = 150)
+        else:
+            plt.savefig(figure_name + f'test_{metric}-{values[-1]:.2f}.jpg', quality = 100, dpi = 150)
+        plt.show()
+        #plt.savefig("history/test_accuracy.jpg", bbox_inches = "tight", quality = 100, dpi = 150)#save_fig
+            
 def to_file_params(filename, params, with_lines = True):
     f = open(filename, "a")
     for k in params:
