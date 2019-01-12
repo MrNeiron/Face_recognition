@@ -1,0 +1,46 @@
+load_type = 15.2
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 5000
+start_folder = 0
+batch_size_folder = 8
+num_folders_val = 80
+start_folder_val = 5000
+batch_size_folder_val = 2
+epochs = 8
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history15.3.txt
+save_model_name = models/FaceModel_whaleType/Model_15.3.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Tiny model with a lot of data
+
+all_examples = 152400
+train_examples = 150000
+test_examples = 2400
+
+	Start time = 2:5
+	End time = 3:18
+	Spend time = 1:13:27
+	Accuracy: 0.7066733322143555, Val Accuracy: 0.563333336263895, Loss: 0.5932678216934204, Val Loss: 0.8598732963204384
+Epoch 1/8
+		 loss: 0.656938777923584, acc: 0.6377799998283387, val_loss: 1.1983138233423234, val_acc: 0.5
+Epoch 2/8
+		 loss: 0.648009855222702, acc: 0.6534199986457825, val_loss: 0.766859881579876, val_acc: 0.5533333368599415
+Epoch 3/8
+		 loss: 0.6355685882091522, acc: 0.6650933332443237, val_loss: 0.628180842846632, val_acc: 0.6741666704416275
+Epoch 4/8
+		 loss: 0.6270447555065155, acc: 0.6744333351135254, val_loss: 0.6955362364649773, val_acc: 0.6299999989569187
+Epoch 5/8
+		 loss: 0.6174909842967987, acc: 0.6834800002098084, val_loss: 0.6678505495190621, val_acc: 0.6462500005960464
+Epoch 6/8
+		 loss: 0.6074344628334045, acc: 0.6930666662216186, val_loss: 0.675330625474453, val_acc: 0.6420833334326744
+Epoch 7/8
+		 loss: 0.599628610610962, acc: 0.7015066666603088, val_loss: 0.7887584418058395, val_acc: 0.5741666652262211
+Epoch 8/8
+		 loss: 0.5932678216934204, acc: 0.7066733322143555, val_loss: 0.8598732963204384, val_acc: 0.563333336263895
+
+-----------------------------------------
+

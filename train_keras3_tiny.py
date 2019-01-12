@@ -17,11 +17,12 @@ from os import makedirs
 
 
 #MAIN
-TYPE = 0
-LOAD_MODEL = False
+TYPE = 15.5
+LOAD_TYPE = 15.4
+LOAD_MODEL = True
 
 #OTHERS
-DESCRIPTION = "dropout=0.5 and more data"
+DESCRIPTION = "Tiny model with a lot of data"
 PRINT_LOGS = False
 SHOW_FIGURES = True
 
@@ -33,19 +34,19 @@ NUM_EXAMPLES = 15 if TYPE != 0 else 15
 START_EXAMPLES = 0 if TYPE != 0 else 0
 
 #FOLDERS
-NUM_FOLDERS = 100 if TYPE != 0 else 8
-START_FOLDER = 6000 if TYPE != 0 else 0
+NUM_FOLDERS = 7000 if TYPE != 0 else 8
+START_FOLDER = 0 if TYPE != 0 else 0
 BATCH_SIZE_FOLDER = 8 if TYPE != 0 else 2
 
 #FOLDERS VALIDATION
 NUM_FOLDERS_VAL = 80 if TYPE != 0 else 5
-START_FOLDER_VAL = 5000 if TYPE != 0 else 900
+START_FOLDER_VAL = 8000 if TYPE != 0 else 900
 BATCH_SIZE_FOLDER_VAL = 2 if TYPE != 0 else 2
 
 
 #TRAIN ITTERATION
 #BATCH_SIZE = 80 if TYPE != 0 else 50
-EPOCHS = 1 if TYPE != 0 else 5
+EPOCHS = 4 if TYPE != 0 else 5
 
 #TRAIN
 LEARNING_RATE = 0.001
@@ -64,7 +65,7 @@ SAVE_EACH_MODEL_DIR = f"{SAVE_MODEL_DIR}/{TYPE}"
 SAVE_MODEL_NAME = f"{SAVE_MODEL_DIR}/Model_{TYPE}.h5" if TYPE != 0 else f"{SAVE_MODEL_DIR}/Model_test_{TYPE}.h5" 
 SAVE_EACH_MODEL_NAME = (f"{SAVE_EACH_MODEL_DIR}/Model_" + "{epoch:02d}-{val_loss:.2f}.h5") if TYPE != 0 else (f"{SAVE_EACH_MODEL_DIR}/Model_test_" + "{epoch:02d}-{val_loss:.2f}.h5")
 
-LOAD_MODEL_NAME = f"{SAVE_MODEL_DIR}/Model_{TYPE}.h5" if TYPE != 0 else f"{SAVE_MODEL_DIR}/Model_test_{TYPE}.h5" 
+LOAD_MODEL_NAME = f"{SAVE_MODEL_DIR}/Model_{LOAD_TYPE}.h5" if TYPE != 0 else f"{SAVE_MODEL_DIR}/Model_test_{LOAD_TYPE}.h5" 
 
 
 DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
@@ -118,37 +119,26 @@ def build_model(img_shape, lr, l2, activation='sigmoid'):
     optim  = Adam(lr=lr)
     kwargs = {'padding':'same', 'kernel_regularizer':regul}
 
-    inp = Input(shape=img_shape) # 384x384x1
+    inp = Input(shape=img_shape) # 96x96x1
     x   = Conv2D(64, (9,9), strides=2, activation='relu', **kwargs)(inp)
 
-    x   = MaxPooling2D((2, 2), strides=(2, 2))(x) # 96x96x64
+    x   = MaxPooling2D((2, 2), strides=(2, 2))(x) # 50x50x64
     for _ in range(1):
         x = BatchNormalization()(x)
         x = Conv2D(64, (3,3), activation='relu', **kwargs)(x)
 
-    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 48x48x64
+    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 25x25x64
     x = BatchNormalization()(x)
-    x = Conv2D(128, (1,1), activation='relu', **kwargs)(x) # 48x48x128
+    x = Conv2D(128, (1,1), activation='relu', **kwargs)(x) # 25x25x128
     for _ in range(1): x = subblock(x, 64, **kwargs)
+    #x = Dropout(0.5)(x)
 
-    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 24x24x128
+    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 12x12x384
     x = BatchNormalization()(x)
-    x = Conv2D(256, (1,1), activation='relu', **kwargs)(x) # 24x24x256
-    for _ in range(1): x = subblock(x, 64, **kwargs)
-    #x = Dropout(0.3)(x)
-    
-    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 12x12x256
-    x = BatchNormalization()(x)
-    x = Conv2D(384, (1,1), activation='relu', **kwargs)(x) # 12x12x384
-    for _ in range(1): x = subblock(x, 96, **kwargs)
-    x = Dropout(0.5)(x)
-
-    x = MaxPooling2D((2, 2), strides=(2, 2))(x) # 6x6x384
-    x = BatchNormalization()(x)
-    x = Conv2D(512, (1,1), activation='relu', **kwargs)(x) # 6x6x512
+    x = Conv2D(256, (1,1), activation='relu', **kwargs)(x) # 12x12x512
     #for _ in range(1): x = subblock(x, 128, **kwargs)
     
-    x             = GlobalMaxPooling2D()(x) # 512
+    x             = GlobalMaxPooling2D()(x) # 384
     branch_model  = Model(inp, x)
     
     ############
@@ -195,7 +185,7 @@ else:
     FaceModel, _,_ = build_model(INPUT_SHAPE, lr = LEARNING_RATE, l2 = L2)
 
 
-
+if LOAD_MODEL: to_file_params(NAME_HISTORY, [f"load_type = {LOAD_TYPE}\n"], False)
 to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size_folder = {BATCH_SIZE_FOLDER}\nnum_folders_val = {NUM_FOLDERS_VAL}\nstart_folder_val = {START_FOLDER_VAL}\nbatch_size_folder_val = {BATCH_SIZE_FOLDER_VAL}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
 
 to_file_params(NAME_HISTORY, [f"all_examples = {ALL_EXAMPLES}\ntrain_examples = {TRAIN_EXAMPLES}\ntest_examples = {TEST_EXAMPLES}\n"], with_lines = False)

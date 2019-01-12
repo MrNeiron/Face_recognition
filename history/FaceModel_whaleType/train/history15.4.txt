@@ -1,0 +1,48 @@
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 7000
+start_folder = 0
+batch_size_folder = 8
+num_folders_val = 80
+start_folder_val = 5000
+batch_size_folder_val = 2
+epochs = 10
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history15.4.txt
+save_model_name = models/FaceModel_whaleType/Model_15.4.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Tiny model with a lot of data
+
+all_examples = 212400
+train_examples = 210000
+test_examples = 2400
+
+	Start time = 3:57
+	End time = 6:4
+	Spend time = 2:6:54
+	Accuracy: 0.6859142854554312, Val Accuracy: 0.6662500038743019, Loss: 0.6146022601468223, Val Loss: 0.6316806070506573
+Epoch 1/10
+		 loss: 0.8102989997182574, acc: 0.5894380946159363, val_loss: 0.8333226487040519, val_acc: 0.5087499976158142
+Epoch 2/10
+		 loss: 0.6917667666162763, acc: 0.6137333325317927, val_loss: 0.6726350575685501, val_acc: 0.6316666655242443
+Epoch 3/10
+		 loss: 0.6719545508793422, acc: 0.6200809516225543, val_loss: 0.6882800549268723, val_acc: 0.58500000461936
+Epoch 4/10
+		 loss: 0.6669289229937962, acc: 0.6224999999318804, val_loss: 0.6647300019860267, val_acc: 0.6166666686534882
+Epoch 5/10
+		 loss: 0.6606921793392726, acc: 0.6292619046483721, val_loss: 0.6467136435210705, val_acc: 0.6533333286643028
+Epoch 6/10
+		 loss: 0.6490381753785269, acc: 0.6470761910847255, val_loss: 0.7253387406468391, val_acc: 0.5662499994039536
+Epoch 7/10
+		 loss: 0.6396961512565613, acc: 0.6611190471308572, val_loss: 0.7182272113859653, val_acc: 0.5820833370089531
+Epoch 8/10
+		 loss: 0.6325463483674185, acc: 0.6677142859867641, val_loss: 0.6844614215195179, val_acc: 0.6137500010430813
+Epoch 9/10
+		 loss: 0.6258709444999695, acc: 0.675285714830671, val_loss: 0.6694520391523838, val_acc: 0.6404166631400585
+Epoch 10/10
+		 loss: 0.6146022601468223, acc: 0.6859142854554312, val_loss: 0.6316806070506573, val_acc: 0.6662500038743019
+
+-----------------------------------------
+

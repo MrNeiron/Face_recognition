@@ -3,18 +3,18 @@ input_shape = (96, 96, 1)
 num_examples = 15
 num_folders = 25
 start_folder = 300
-name_history = history/FaceModel_whaleType/test/history_test11.1.txt
-load_model_name = models/FaceModel_whaleType/Model_11.1.h5
+name_history = history/FaceModel_whaleType/test/history_test14.3.txt
+load_model_name = models/FaceModel_whaleType/Model_14.3.h5
 dataset_p = ../Datasets/Faces_dataset/Faces
 dataset_n = ../Datasets/Faces_dataset/Faces
 
 test_examples = 750
 
-	Start time = 23:32
-	End time = 23:33
-	Spend time = 0:1:16
+	Start time = 22:36
+	End time = 22:36
+	Spend time = 0:0:25
 
-	Test accuracy = 0.5880000003178915
+	Test accuracy = 0.7533333328564962
 
 -----------------------------------------
 

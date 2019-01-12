@@ -4,16 +4,23 @@ import numpy as np
 from Prepare_data import Get_data, Shuffle_data
 from utils import to_file_params, TimeControll
 
-TYPE = 13.3
+
+TYPE = 14.6
+E = 28
+VALUE = 0.73
+
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
 NUM_EXAMPLES = 5 if TYPE != 0 else 2
 NUM_FOLDERS = 4 if TYPE != 0 else 2
-START_FOLDER = 5000 if TYPE != 0 else 0
+START_FOLDER = 1100 if TYPE != 0 else 0
 
 NAME_HISTORY = f"history/FaceModel_whaleType/predict/history_predict{TYPE}.txt"
 LOAD_MODEL_NAME = f"models/FaceModel_whaleType/Model_{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_whaleType/Model_test{TYPE}.h5"
+#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}/Model_{E}-{VALUE}.h5"
+
+IMAGE_SAVE_DIR = f"test_images/{TYPE}"
 
 VALIDATION_SIZE = 0.2
 RANDOM_STATE = 2018
@@ -44,9 +51,15 @@ my_time.set_end_time()
 score_r = np.round(score)
 
 from cv2 import imwrite
+from os.path import exists
+from os import makedirs
+
+if not exists(IMAGE_SAVE_DIR): 
+    makedirs(IMAGE_SAVE_DIR) 
+
 for i in range(Y_test.shape[0]):
-    imwrite(f"test_images/test_image{i}.1_{Y_test[i]}-{score_r[i]}.jpg", X_test[0][i])
-    imwrite(f"test_images/test_image{i}.2_{Y_test[i]}-{score_r[i]}.jpg", X_test[1][i])
+    imwrite(IMAGE_SAVE_DIR + f"/test_image{i}.1_{Y_test[i]}-{score_r[i]}.jpg", X_test[0][i])
+    imwrite(IMAGE_SAVE_DIR + f"/test_image{i}.2_{Y_test[i]}-{score_r[i]}.jpg", X_test[1][i])
     #print(f"Y{i} = {Y_train[i]}")
 
 time_start = my_time.get_start_time()

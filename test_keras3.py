@@ -6,9 +6,9 @@ from utils import to_file_params, TimeControll, get_all_params
 
 
 
-TYPE = 13.2
-E = 18
-VALUE = 0.78
+TYPE = 15.5
+E = 3
+VALUE = 0.63
 
 params = get_all_params(f"history/FaceModel_whaleType/train/history{TYPE}.txt", False, False, 
                         "batch_size", 
@@ -20,8 +20,9 @@ RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
 NUM_EXAMPLES = 15 if TYPE != 0 else 2
-NUM_FOLDERS = 100 if TYPE != 0 else 2
-START_FOLDER = 5000 if TYPE != 0 else 0
+START_EXAMPLES = 0 if TYPE != 0 else 0
+NUM_FOLDERS = 25 if TYPE != 0 else 2
+START_FOLDER = 10000 if TYPE != 0 else 0
 
 NAME_HISTORY = f"history/FaceModel_whaleType/test/history_test{TYPE}.txt"
 LOAD_MODEL_NAME = f"models/FaceModel_whaleType/Model_{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_whaleType/Model_test{TYPE}.h5"
@@ -40,14 +41,15 @@ X1_input, X2_input, Y_input = Get_data(path_p = DATASET_P,
                                       resolution = RESOLUTION,
                                       grayscale = GRAYSCALE,
                                       num_examples = NUM_EXAMPLES,
-                                      num_folders = NUM_FOLDERS,
+                                      start_examples = START_EXAMPLES,
+num_folders = NUM_FOLDERS,
                                       input_shape = INPUT_SHAPE,
                                       start_folder = START_FOLDER)
 
 X_test = [X1_input, X2_input]
 Y_test = Y_input 
 
-to_file_params(NAME_HISTORY, [f"\ninput_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nname_history = {NAME_HISTORY}\nload_model_name = {LOAD_MODEL_NAME}\ndataset_p = {DATASET_P}\ndataset_n = {DATASET_N}\n"], False)
+to_file_params(NAME_HISTORY, [f"\ninput_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nstart_exampels = {START_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nname_history = {NAME_HISTORY}\nload_model_name = {LOAD_MODEL_NAME}\ndataset_p = {DATASET_P}\ndataset_n = {DATASET_N}\n"], False)
 
 to_file_params(NAME_HISTORY, [f"test_examples = {Y_test.shape[0]}\n"], False)
 

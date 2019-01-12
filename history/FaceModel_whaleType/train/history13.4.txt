@@ -1,0 +1,22 @@
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 1800
+start_folder = 0
+batch_size_folder = 8
+num_folders_val = 80
+start_folder_val = 5000
+batch_size_folder_val = 2
+epochs = 80
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history13.4.txt
+save_model_name = models/FaceModel_whaleType/Model_13.4.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Trainning with dropout regularizers
+
+all_examples = 56400
+train_examples = 54000
+test_examples = 2400
+
+	Start time = 20:53

@@ -1,0 +1,72 @@
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 100
+start_folder = 5000
+name_history = history/FaceModel_whaleType/test/history_test13.4.txt
+load_model_name = models/FaceModel_whaleType/Model_13.4.h5
+dataset_p = ../Datasets/Faces_dataset/Faces
+dataset_n = ../Datasets/Faces_dataset/Faces
+
+test_examples = 3000
+
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 100
+start_folder = 5000
+name_history = history/FaceModel_whaleType/test/history_test13.4.txt
+load_model_name = models/FaceModel_whaleType/13.4/Model_76-0.98.h5
+dataset_p = ../Datasets/Faces_dataset/Faces
+dataset_n = ../Datasets/Faces_dataset/Faces
+
+test_examples = 3000
+
+	Start time = 4:38
+	End time = 4:42
+	Spend time = 0:4:17
+
+	Test accuracy = 0.6450000000794729
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 100
+start_folder = 1000
+name_history = history/FaceModel_whaleType/test/history_test13.4.txt
+load_model_name = models/FaceModel_whaleType/13.4/Model_76-0.98.h5
+dataset_p = ../Datasets/Faces_dataset/Faces
+dataset_n = ../Datasets/Faces_dataset/Faces
+
+test_examples = 3000
+
+	Start time = 12:30
+	End time = 12:36
+	Spend time = 0:6:5
+
+	Test accuracy = 0.6950000000794728
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 15
+num_folders = 25
+start_folder = 0
+name_history = history/FaceModel_whaleType/test/history_test13.4.txt
+load_model_name = models/FaceModel_whaleType/13.4/Model_76-0.98.h5
+dataset_p = ../Datasets/Faces_dataset/Faces
+dataset_n = ../Datasets/Faces_dataset/Faces
+
+test_examples = 750
+
+	Start time = 12:41
+	End time = 12:41
+	Spend time = 0:0:48
+
+	Test accuracy = 0.6986666669845581
+
+-----------------------------------------
+
