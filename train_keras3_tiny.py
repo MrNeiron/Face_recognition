@@ -17,36 +17,42 @@ from os import makedirs
 
 
 #MAIN
-TYPE = 15.5
-LOAD_TYPE = 15.4
+TYPE = 16.1
+LOAD_TYPE = 16.1
 LOAD_MODEL = True
 
 #OTHERS
-DESCRIPTION = "Tiny model with a lot of data"
+DESCRIPTION = "Tiny model with some new data"
 PRINT_LOGS = False
 SHOW_FIGURES = True
 
-#IMAGES
+#IMAGE SIZE
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
-NUM_EXAMPLES = 15 if TYPE != 0 else 15
+
+#IMAGES TRAIN
+NUM_EXAMPLES = 25 if TYPE != 0 else 15
 START_EXAMPLES = 0 if TYPE != 0 else 0
 
-#FOLDERS
-NUM_FOLDERS = 7000 if TYPE != 0 else 8
+#IMAGES VALIDATION
+NUM_EXAMPLES_VAL = 2 if TYPE != 0 else 2
+START_EXAMPLES_VAL = NUM_EXAMPLES if TYPE != 0 else 0
+
+#FOLDERS TRAIN
+NUM_FOLDERS = 4680 if TYPE != 0 else 8
 START_FOLDER = 0 if TYPE != 0 else 0
-BATCH_SIZE_FOLDER = 8 if TYPE != 0 else 2
+BATCH_SIZE_FOLDER = 5 if TYPE != 0 else 2
 
 #FOLDERS VALIDATION
-NUM_FOLDERS_VAL = 80 if TYPE != 0 else 5
-START_FOLDER_VAL = 8000 if TYPE != 0 else 900
-BATCH_SIZE_FOLDER_VAL = 2 if TYPE != 0 else 2
+NUM_FOLDERS_VAL = NUM_FOLDERS if TYPE != 0 else 5
+START_FOLDER_VAL = START_FOLDER if TYPE != 0 else 900
+BATCH_SIZE_FOLDER_VAL = BATCH_SIZE_FOLDER if TYPE != 0 else 2
 
 
 #TRAIN ITTERATION
 #BATCH_SIZE = 80 if TYPE != 0 else 50
-EPOCHS = 4 if TYPE != 0 else 5
+EPOCHS = 10 if TYPE != 0 else 5
 
 #TRAIN
 LEARNING_RATE = 0.001
@@ -71,7 +77,7 @@ LOAD_MODEL_NAME = f"{SAVE_MODEL_DIR}/Model_{LOAD_TYPE}.h5" if TYPE != 0 else f"{
 DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
 
 TRAIN_EXAMPLES = NUM_EXAMPLES*NUM_FOLDERS*2
-TEST_EXAMPLES = NUM_EXAMPLES*NUM_FOLDERS_VAL*2
+TEST_EXAMPLES = NUM_EXAMPLES_VAL*NUM_FOLDERS_VAL*2
 ALL_EXAMPLES = TRAIN_EXAMPLES+TEST_EXAMPLES
     
 trainGen = data_generator(DATASET_P,
@@ -90,8 +96,8 @@ valGen = data_generator(DATASET_P,
                         DATASET_N,
                         resolution = RESOLUTION,
                         grayscale = GRAYSCALE,
-                        num_examples = NUM_EXAMPLES,
-                        start_examples = START_EXAMPLES,
+                        num_examples = NUM_EXAMPLES_VAL,
+                        start_examples = START_EXAMPLES_VAL, 
                         num_folders = NUM_FOLDERS_VAL,
                         start_folder = START_FOLDER_VAL,
                         batch_size_folder = BATCH_SIZE_FOLDER_VAL,
@@ -185,8 +191,8 @@ else:
     FaceModel, _,_ = build_model(INPUT_SHAPE, lr = LEARNING_RATE, l2 = L2)
 
 
-if LOAD_MODEL: to_file_params(NAME_HISTORY, [f"load_type = {LOAD_TYPE}\n"], False)
-to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size_folder = {BATCH_SIZE_FOLDER}\nnum_folders_val = {NUM_FOLDERS_VAL}\nstart_folder_val = {START_FOLDER_VAL}\nbatch_size_folder_val = {BATCH_SIZE_FOLDER_VAL}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
+if LOAD_MODEL: to_file_params(NAME_HISTORY, [f"load_type = {LOAD_TYPE}"], False)
+to_file_params(NAME_HISTORY, [f"input_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_examples_val = {NUM_EXAMPLES_VAL}\nstart_examples = {START_EXAMPLES}\nstart_examples_val = {START_EXAMPLES_VAL}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nbatch_size_folder = {BATCH_SIZE_FOLDER}\nnum_folders_val = {NUM_FOLDERS_VAL}\nstart_folder_val = {START_FOLDER_VAL}\nbatch_size_folder_val = {BATCH_SIZE_FOLDER_VAL}\nepochs = {EPOCHS}\nlearning_rate = {LEARNING_RATE}\nl2 = {L2}\nname_history = {NAME_HISTORY}\nsave_model_name = {SAVE_MODEL_NAME}\ndataset_positive = {DATASET_P}\ndataset_negative = {DATASET_N}\ndescription = {DESCRIPTION}\n"], with_lines = False)
 
 to_file_params(NAME_HISTORY, [f"all_examples = {ALL_EXAMPLES}\ntrain_examples = {TRAIN_EXAMPLES}\ntest_examples = {TEST_EXAMPLES}\n"], with_lines = False)
 

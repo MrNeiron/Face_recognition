@@ -1,0 +1,836 @@
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=18:9, End time= 18:9, Spend time= 0:0:9
+
+	Predict accuracy = 60.0
+
+0)score: [0.] - [1.]: [False]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [0.] - [1.]: [False]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [0.] - [1.]: [False]
+17)score: [1.] - [1.]: [ True]
+18)score: [0.] - [1.]: [False]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [0.] - [0.]: [ True]
+23)score: [1.] - [0.]: [False]
+24)score: [0.] - [0.]: [ True]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [0.] - [0.]: [ True]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [0.] - [0.]: [ True]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/16.1/Model_03-0.67.h5
+
+predict_examples = 40
+
+	Start time=21:25, End time= 21:25, Spend time= 0:0:13
+
+	Predict accuracy = 60.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [0.] - [1.]: [False]
+2)score: [1.] - [1.]: [ True]
+3)score: [0.] - [1.]: [False]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [0.] - [0.]: [ True]
+24)score: [1.] - [0.]: [False]
+25)score: [0.] - [0.]: [ True]
+26)score: [0.] - [0.]: [ True]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [1.] - [0.]: [False]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [1.] - [0.]: [False]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=21:27, End time= 21:27, Spend time= 0:0:9
+
+	Predict accuracy = 72.5
+
+0)score: [1.] - [1.]: [ True]
+1)score: [0.] - [1.]: [False]
+2)score: [1.] - [1.]: [ True]
+3)score: [0.] - [1.]: [False]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [0.] - [0.]: [ True]
+22)score: [0.] - [0.]: [ True]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [0.] - [0.]: [ True]
+27)score: [0.] - [0.]: [ True]
+28)score: [0.] - [0.]: [ True]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [0.] - [0.]: [ True]
+35)score: [0.] - [0.]: [ True]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=4:32, End time= 4:32, Spend time= 0:0:12
+
+	Predict accuracy = 47.5
+
+0)score: [1.] - [1.]: [ True]
+1)score: [0.] - [1.]: [False]
+2)score: [1.] - [1.]: [ True]
+3)score: [0.] - [1.]: [False]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [1.] - [0.]: [False]
+30)score: [1.] - [0.]: [False]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [1.] - [0.]: [False]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/16.1_2/Model_10-0.64.h5
+
+predict_examples = 40
+
+	Start time=4:36, End time= 4:36, Spend time= 0:0:9
+
+	Predict accuracy = 65.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [0.] - [1.]: [False]
+2)score: [1.] - [1.]: [ True]
+3)score: [0.] - [1.]: [False]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [0.] - [0.]: [ True]
+24)score: [1.] - [0.]: [False]
+25)score: [0.] - [0.]: [ True]
+26)score: [0.] - [0.]: [ True]
+27)score: [1.] - [0.]: [False]
+28)score: [0.] - [0.]: [ True]
+29)score: [1.] - [0.]: [False]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [0.] - [0.]: [ True]
+35)score: [1.] - [0.]: [False]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/16.1_2/Model_04-0.64.h5
+
+predict_examples = 40
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/16.1/Model_04-0.64.h5
+
+predict_examples = 40
+
+	Start time=15:4, End time= 15:4, Spend time= 0:0:8
+
+	Predict accuracy = 57.49999999999999
+
+0)score: [1.] - [1.]: [ True]
+1)score: [0.] - [1.]: [False]
+2)score: [1.] - [1.]: [ True]
+3)score: [0.] - [1.]: [False]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [0.] - [0.]: [ True]
+26)score: [0.] - [0.]: [ True]
+27)score: [0.] - [0.]: [ True]
+28)score: [1.] - [0.]: [False]
+29)score: [1.] - [0.]: [False]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [1.] - [0.]: [False]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=15:4, End time= 15:4, Spend time= 0:0:8
+
+	Predict accuracy = 55.00000000000001
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [0.] - [0.]: [ True]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [1.] - [0.]: [False]
+30)score: [1.] - [0.]: [False]
+31)score: [1.] - [0.]: [False]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [1.] - [0.]: [False]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=13:49, End time= 13:49, Spend time= 0:0:11
+
+	Predict accuracy = 72.5
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [0.] - [0.]: [ True]
+25)score: [0.] - [0.]: [ True]
+26)score: [0.] - [0.]: [ True]
+27)score: [0.] - [0.]: [ True]
+28)score: [0.] - [0.]: [ True]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+32)score: [0.] - [0.]: [ True]
+33)score: [1.] - [0.]: [False]
+34)score: [1.] - [0.]: [False]
+35)score: [1.] - [0.]: [False]
+36)score: [1.] - [0.]: [False]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+start_examples = 25
+num_folders = 4
+start_folder = 1100
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=13:52, End time= 13:52, Spend time= 0:0:9
+
+	Predict accuracy = 65.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [1.] - [0.]: [False]
+31)score: [0.] - [0.]: [ True]
+32)score: [1.] - [0.]: [False]
+33)score: [1.] - [0.]: [False]
+34)score: [0.] - [0.]: [ True]
+35)score: [0.] - [0.]: [ True]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [1.] - [0.]: [False]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+start_examples = 25
+num_folders = 4
+start_folder = 300
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=13:52, End time= 13:52, Spend time= 0:0:8
+
+	Predict accuracy = 75.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [0.] - [1.]: [False]
+17)score: [1.] - [1.]: [ True]
+18)score: [0.] - [1.]: [False]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [0.] - [0.]: [ True]
+22)score: [0.] - [0.]: [ True]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [0.] - [0.]: [ True]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [0.] - [0.]: [ True]
+32)score: [0.] - [0.]: [ True]
+33)score: [1.] - [0.]: [False]
+34)score: [0.] - [0.]: [ True]
+35)score: [0.] - [0.]: [ True]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+start_examples = 25
+num_folders = 4
+start_folder = 300
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=17:21, End time= 17:21, Spend time= 0:0:9
+
+	Predict accuracy = 67.5
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [0.] - [1.]: [False]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [0.] - [1.]: [False]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [0.] - [1.]: [False]
+16)score: [0.] - [1.]: [False]
+17)score: [1.] - [1.]: [ True]
+18)score: [0.] - [1.]: [False]
+19)score: [0.] - [1.]: [False]
+20)score: [0.] - [0.]: [ True]
+21)score: [0.] - [0.]: [ True]
+22)score: [1.] - [0.]: [False]
+23)score: [0.] - [0.]: [ True]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [0.] - [0.]: [ True]
+32)score: [0.] - [0.]: [ True]
+33)score: [0.] - [0.]: [ True]
+34)score: [0.] - [0.]: [ True]
+35)score: [1.] - [0.]: [False]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [0.] - [0.]: [ True]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+start_examples = 25
+num_folders = 4
+start_folder = 600
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=17:22, End time= 17:22, Spend time= 0:0:8
+
+	Predict accuracy = 70.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [0.] - [0.]: [ True]
+32)score: [1.] - [0.]: [False]
+33)score: [0.] - [0.]: [ True]
+34)score: [1.] - [0.]: [False]
+35)score: [0.] - [0.]: [ True]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 5
+start_examples = 25
+num_folders = 4
+start_folder = 600
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 40
+
+	Start time=17:23, End time= 17:23, Spend time= 0:0:8
+
+	Predict accuracy = 70.0
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [1.] - [1.]: [ True]
+11)score: [1.] - [1.]: [ True]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [1.] - [1.]: [ True]
+15)score: [1.] - [1.]: [ True]
+16)score: [1.] - [1.]: [ True]
+17)score: [1.] - [1.]: [ True]
+18)score: [1.] - [1.]: [ True]
+19)score: [1.] - [1.]: [ True]
+20)score: [1.] - [0.]: [False]
+21)score: [1.] - [0.]: [False]
+22)score: [1.] - [0.]: [False]
+23)score: [1.] - [0.]: [False]
+24)score: [1.] - [0.]: [False]
+25)score: [1.] - [0.]: [False]
+26)score: [1.] - [0.]: [False]
+27)score: [1.] - [0.]: [False]
+28)score: [1.] - [0.]: [False]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [0.] - [0.]: [ True]
+32)score: [1.] - [0.]: [False]
+33)score: [0.] - [0.]: [ True]
+34)score: [1.] - [0.]: [False]
+35)score: [0.] - [0.]: [ True]
+36)score: [0.] - [0.]: [ True]
+37)score: [0.] - [0.]: [ True]
+38)score: [0.] - [0.]: [ True]
+39)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+
+
+input_shape = (96, 96, 1)
+num_examples = 2
+start_examples = 25
+num_folders = 8
+start_folder = 600
+validation_size = 0.2
+random_state = 2018
+name_history = history/FaceModel_whaleType/predict/history_predict16.1.txt
+load_model_name = models/FaceModel_whaleType/Model_16.1.h5
+
+predict_examples = 32
+
+	Start time=17:24, End time= 17:24, Spend time= 0:0:9
+
+	Predict accuracy = 71.875
+
+0)score: [1.] - [1.]: [ True]
+1)score: [1.] - [1.]: [ True]
+2)score: [1.] - [1.]: [ True]
+3)score: [1.] - [1.]: [ True]
+4)score: [1.] - [1.]: [ True]
+5)score: [1.] - [1.]: [ True]
+6)score: [1.] - [1.]: [ True]
+7)score: [1.] - [1.]: [ True]
+8)score: [1.] - [1.]: [ True]
+9)score: [1.] - [1.]: [ True]
+10)score: [0.] - [1.]: [False]
+11)score: [0.] - [1.]: [False]
+12)score: [1.] - [1.]: [ True]
+13)score: [1.] - [1.]: [ True]
+14)score: [0.] - [1.]: [False]
+15)score: [0.] - [1.]: [False]
+16)score: [1.] - [0.]: [False]
+17)score: [1.] - [0.]: [False]
+18)score: [1.] - [0.]: [False]
+19)score: [1.] - [0.]: [False]
+20)score: [0.] - [0.]: [ True]
+21)score: [0.] - [0.]: [ True]
+22)score: [0.] - [0.]: [ True]
+23)score: [0.] - [0.]: [ True]
+24)score: [0.] - [0.]: [ True]
+25)score: [0.] - [0.]: [ True]
+26)score: [0.] - [0.]: [ True]
+27)score: [0.] - [0.]: [ True]
+28)score: [0.] - [0.]: [ True]
+29)score: [0.] - [0.]: [ True]
+30)score: [0.] - [0.]: [ True]
+31)score: [1.] - [0.]: [False]
+
+-----------------------------------------
+

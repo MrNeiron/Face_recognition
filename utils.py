@@ -2,8 +2,8 @@ from datetime import datetime
 from keras.callbacks import Callback
 from pandas import DataFrame
 from Prepare_data import Get_data
-from os.path import exists
-from os import makedirs
+import os
+import shutil as sh
 import matplotlib.pyplot as plt
 
 
@@ -26,8 +26,8 @@ def data_generator(dir_p, dir_n, resolution, grayscale, num_examples, num_folder
 def monitor_process(history, metrics, figure_name, type_model):
     metrics_list = {m:history[m] for m in metrics}
     epochs = range(len(metrics_list[metrics[0]]))
-    if not exists(figure_name):
-        makedirs(figure_name)
+    if not os.path.exists(figure_name):
+        os.makedirs(figure_name)
     for metric,values in metrics_list.items():
         plt.plot(epochs, values)
         plt.title(f"Type: {type_model} - {metric}")
@@ -122,6 +122,22 @@ class TimeControll():
         m %= 60
         
         return h,m,s
+    
+def copy_move_dirs(path, new_path, folders, del_folders = True, copy = True):
+    for folder in folders:
+        cur_path = path+'/'+folder
+        cur_new_path = new_path+'/'+folder
+        if os.path.exists(cur_path):
+            if not os.path.exists(cur_new_path):
+                os.mkdir(cur_new_path)
+            for file in os.listdir(cur_path):
+                if copy:
+                    sh.copy(cur_path+'/'+file, cur_new_path)
+                else:
+                    sh.move(cur_path+'/'+file, cur_new_path)
+            if del_folders and not copy:
+                os.rmdir(cur_path)
+    print("Complete!")
 
 class AccuracyHistory(Callback):
     def on_train_begin(self, logs={}):

@@ -5,20 +5,21 @@ from Prepare_data import Get_data, Shuffle_data
 from utils import to_file_params, TimeControll
 
 
-TYPE = 14.6
-E = 28
-VALUE = 0.73
+TYPE = 16.1
+E = 4
+VALUE = 0.64
 
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
-NUM_EXAMPLES = 5 if TYPE != 0 else 2
-NUM_FOLDERS = 4 if TYPE != 0 else 2
-START_FOLDER = 1100 if TYPE != 0 else 0
+NUM_EXAMPLES = 2 if TYPE != 0 else 2
+START_EXAMPLES = 25
+NUM_FOLDERS = 8 if TYPE != 0 else 2
+START_FOLDER = 600 if TYPE != 0 else 0
 
 NAME_HISTORY = f"history/FaceModel_whaleType/predict/history_predict{TYPE}.txt"
 LOAD_MODEL_NAME = f"models/FaceModel_whaleType/Model_{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_whaleType/Model_test{TYPE}.h5"
-#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}/Model_{E}-{VALUE}.h5"
+#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}/Model_0{E}-{VALUE}.h5"
 
 IMAGE_SAVE_DIR = f"test_images/{TYPE}"
 
@@ -30,6 +31,7 @@ X1_input, X2_input, Y_test = Get_data(path_p = "../Datasets/Faces_dataset/Faces"
                                       resolution = RESOLUTION,
                                       grayscale = GRAYSCALE,
                                       num_examples = NUM_EXAMPLES,
+start_examples = START_EXAMPLES,
                                       num_folders = NUM_FOLDERS,
                                       input_shape = INPUT_SHAPE,
                                       start_folder = START_FOLDER)
@@ -37,7 +39,7 @@ X1_input, X2_input, Y_test = Get_data(path_p = "../Datasets/Faces_dataset/Faces"
 X_test = [X1_input, X2_input]
 
 
-to_file_params(NAME_HISTORY, [f"\ninput_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nload_model_name = {LOAD_MODEL_NAME}\n"], False)
+to_file_params(NAME_HISTORY, [f"\ninput_shape = {INPUT_SHAPE}\nnum_examples = {NUM_EXAMPLES}\nstart_examples = {START_EXAMPLES}\nnum_folders = {NUM_FOLDERS}\nstart_folder = {START_FOLDER}\nvalidation_size = {VALIDATION_SIZE}\nrandom_state = {RANDOM_STATE}\nname_history = {NAME_HISTORY}\nload_model_name = {LOAD_MODEL_NAME}\n"], False)
 
 to_file_params(NAME_HISTORY, [f"predict_examples = {Y_test.shape[0]}\n"], False)
 

@@ -1,0 +1,64 @@
+load_type = 15.6
+
+input_shape = (96, 96, 1)
+num_examples = 15
+start_examples = 0
+start_examples_val = 15
+num_folders = 7000
+start_folder = 0
+batch_size_folder = 8
+num_folders_val = 80
+start_folder_val = 300
+batch_size_folder_val = 2
+epochs = 16
+learning_rate = 0.001
+l2 = 0.0007
+name_history = history/FaceModel_whaleType/train/history15.7.txt
+save_model_name = models/FaceModel_whaleType/Model_15.7.h5
+dataset_positive = ../Datasets/Faces_dataset/Faces
+dataset_negative = ../Datasets/Faces_dataset/Faces
+description = Tiny model with a lot of data
+
+all_examples = 212400
+train_examples = 210000
+test_examples = 2400
+
+	Start time = 19:2
+	End time = 22:25
+	Spend time = 3:23:48
+	Accuracy: 0.7523809518814087, Val Accuracy: 0.6458333320915699, Loss: 0.5353509355613163, Val Loss: 0.6840854659676552
+Epoch 1/16
+		 loss: 0.5629439768110003, acc: 0.7305809528487069, val_loss: 0.6810915119946003, val_acc: 0.6458333306014538
+Epoch 2/16
+		 loss: 0.5610104363305228, acc: 0.7319380954333714, val_loss: 0.6706715799868107, val_acc: 0.6424999989569187
+Epoch 3/16
+		 loss: 0.5575570004667555, acc: 0.7339476207324437, val_loss: 0.63160997107625, val_acc: 0.6954166702926159
+Epoch 4/16
+		 loss: 0.5559762339932578, acc: 0.7373666658401489, val_loss: 0.6654261752963067, val_acc: 0.6637500017881394
+Epoch 5/16
+		 loss: 0.5557196129049574, acc: 0.7375238092967442, val_loss: 0.6577034965157509, val_acc: 0.6758333370089531
+Epoch 6/16
+		 loss: 0.5504994995934622, acc: 0.7399619048663548, val_loss: 0.668265649676323, val_acc: 0.6691666647791863
+Epoch 7/16
+		 loss: 0.5478596245220729, acc: 0.7437047613007681, val_loss: 0.6639427475631237, val_acc: 0.6499999970197677
+Epoch 8/16
+		 loss: 0.5453404481751578, acc: 0.7436857135636465, val_loss: 0.6840223930776119, val_acc: 0.6387500010430813
+Epoch 9/16
+		 loss: 0.5472808683259146, acc: 0.742919047832489, val_loss: 0.6504531115293503, val_acc: 0.6670833356678486
+Epoch 10/16
+		 loss: 0.5445380195208959, acc: 0.7453809532438006, val_loss: 0.6967759191989898, val_acc: 0.6237500019371509
+Epoch 11/16
+		 loss: 0.544399391753333, acc: 0.746409524508885, val_loss: 0.6810884937644005, val_acc: 0.6208333306014537
+Epoch 12/16
+		 loss: 0.5420698145798274, acc: 0.7470619042260306, val_loss: 0.6181800439953804, val_acc: 0.6920833297073841
+Epoch 13/16
+		 loss: 0.5392185146468026, acc: 0.7482857148987906, val_loss: 0.676382677257061, val_acc: 0.6375
+Epoch 14/16
+		 loss: 0.5368635981423514, acc: 0.7507714267458234, val_loss: 0.6679334215819835, val_acc: 0.6495833352208138
+Epoch 15/16
+		 loss: 0.5390990237849099, acc: 0.7490095229148864, val_loss: 0.6248126592487097, val_acc: 0.690833330154419
+Epoch 16/16
+		 loss: 0.5353509355613163, acc: 0.7523809518814087, val_loss: 0.6840854659676552, val_acc: 0.6458333320915699
+
+-----------------------------------------
+

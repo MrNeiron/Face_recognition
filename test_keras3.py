@@ -6,9 +6,9 @@ from utils import to_file_params, TimeControll, get_all_params
 
 
 
-TYPE = 15.5
-E = 3
-VALUE = 0.63
+TYPE = 16.1
+E = 23
+VALUE = 0.6
 
 params = get_all_params(f"history/FaceModel_whaleType/train/history{TYPE}.txt", False, False, 
                         "batch_size", 
@@ -19,14 +19,14 @@ params = get_all_params(f"history/FaceModel_whaleType/train/history{TYPE}.txt", 
 RESOLUTION = (96,96)
 GRAYSCALE = True
 INPUT_SHAPE = (RESOLUTION[0], RESOLUTION[1], 1 if GRAYSCALE else 3)
-NUM_EXAMPLES = 15 if TYPE != 0 else 2
+NUM_EXAMPLES = 5 if TYPE != 0 else 2
 START_EXAMPLES = 0 if TYPE != 0 else 0
-NUM_FOLDERS = 25 if TYPE != 0 else 2
-START_FOLDER = 10000 if TYPE != 0 else 0
+NUM_FOLDERS = 300 if TYPE != 0 else 2
+START_FOLDER = 900 if TYPE != 0 else 0
 
-NAME_HISTORY = f"history/FaceModel_whaleType/test/history_test{TYPE}.txt"
+NAME_HISTORY = f"history/FaceModel_whaleType/test/history_test{TYPE}.txt"#
 LOAD_MODEL_NAME = f"models/FaceModel_whaleType/Model_{TYPE}.h5" if TYPE != 0 else f"models/FaceModel_whaleType/Model_test{TYPE}.h5"
-#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}/Model_{E}-{VALUE}.h5"
+#LOAD_MODEL_NAME = f"models/FaceModel_whaleType/{TYPE}_2/Model_{E}-{VALUE}0.h5"
 DATASET_P = DATASET_N = "../Datasets/Faces_dataset/Faces"
 
 BATCH_SIZE = params["batch_size"]
